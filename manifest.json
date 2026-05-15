@@ -1,0 +1,15 @@
+{
+  "name": "2026世界盃直播攻略・台灣觀賽指南",
+  "short_name": "世足直播",
+  "description": "2026世界盃直播哪裡看？愛爾達・MOD・華視台灣時間完整攻略",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#e63946",
+  "lang": "zh-TW",
+  "icons": [
+    {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}
+  ]
+}
