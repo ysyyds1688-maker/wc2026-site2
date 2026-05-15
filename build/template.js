@@ -1,0 +1,364 @@
+// 共用模板（雜誌風 + SEO 全面強化版）
+const { SITE } = require('./data');
+
+const SHARED_CSS = `:root{
+--ink:#1a1a1a; --paper:#fafaf7; --bg:#fff; --mute:#666; --line:#1a1a1a; --line-soft:#d4d4d8;
+--red:#b91c1c; --red2:#991b1b; --gold:#92400e; --serif:'Noto Serif TC',Georgia,'Times New Roman',serif;
+--sans:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.85;font-size:17px}
+img{max-width:100%;height:auto;display:block}
+.masthead{background:var(--bg);border-bottom:3px double var(--ink);padding:14px 20px 8px}
+.masthead-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.masthead .title{font-family:var(--serif);font-weight:900;font-size:1.6rem;letter-spacing:0.02em;color:var(--ink);margin:0}
+.masthead .title a{color:inherit;text-decoration:none}
+.masthead .title em{color:var(--red);font-style:normal}
+.masthead .date{font-size:0.85rem;color:var(--mute);text-transform:uppercase;letter-spacing:0.1em}
+.topnav{background:var(--bg);border-bottom:1px solid var(--ink);padding:8px 20px;position:sticky;top:0;z-index:50}
+.topnav-inner{max-width:1200px;margin:0 auto;display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-family:var(--serif);font-size:0.95rem}
+.topnav a{color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:4px 0;font-weight:700}
+.topnav a:hover{border-bottom-color:var(--red)}
+.topnav a.cta{margin-left:auto;background:var(--red);color:#fff!important;padding:8px 16px;border:none;border-radius:0;font-weight:900}
+.topnav a.cta:hover{background:var(--red2);border:none}
+main{max-width:1200px;margin:0 auto;padding:24px 20px}
+.tldr{background:#fef3c7;border-left:4px solid var(--red);padding:14px 18px;margin:18px 0;font-size:0.97rem;line-height:1.7}
+.tldr strong{color:var(--red);font-weight:900;display:inline-block;margin-right:6px}
+.hero-img{margin:16px 0 24px;border:1px solid var(--line-soft);overflow:hidden}
+.hero-img svg{width:100%;height:auto;display:block}
+.lede{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);gap:32px;padding:24px 0 32px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.lede-main h1{font-family:var(--serif);font-size:2.8rem;font-weight:900;line-height:1.1;letter-spacing:-0.01em;margin-bottom:14px;color:var(--ink)}
+.lede-main h1 em{color:var(--red);font-style:normal}
+.lede-main .deck{font-family:var(--serif);font-size:1.15rem;color:#333;line-height:1.5;margin-bottom:16px;font-style:italic}
+.lede-main .byline{font-size:0.85rem;color:var(--mute);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line-soft)}
+.lede-main .byline a{color:var(--red);text-decoration:none;border-bottom:1px dotted var(--red)}
+.lede-main .lead-body p{margin-bottom:14px;font-size:1.02rem}
+.lede-side{padding-left:28px;border-left:1px solid var(--line-soft)}
+.lede-side h2{font-family:var(--serif);font-size:0.9rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:10px;font-weight:900;border:none;padding:0}
+.lede-side h3{font-family:var(--serif);font-size:0.9rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:10px;font-weight:900}
+.lede-side .countdown{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:18px}
+.lede-side .countdown div{text-align:center;padding:10px 6px;background:var(--bg);border:1px solid var(--line-soft)}
+.lede-side .countdown b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:900;color:var(--ink);line-height:1}
+.lede-side .countdown span{display:block;font-size:0.7rem;color:var(--mute);margin-top:3px;letter-spacing:0.1em;text-transform:uppercase}
+.lede-side ul{list-style:none;padding:0}
+.lede-side li{padding:8px 0;border-bottom:1px dotted var(--line-soft);font-size:0.92rem}
+.lede-side li:last-child{border:none}
+.lede-side a{color:var(--ink);text-decoration:none}
+.lede-side a:hover{color:var(--red);text-decoration:underline}
+.lede-side .num{font-family:var(--serif);color:var(--red);font-weight:900;margin-right:8px}
+article h2{font-family:var(--serif);font-size:1.7rem;font-weight:900;margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink);letter-spacing:-0.005em;line-height:1.25}
+article h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;margin:24px 0 10px;color:#222;line-height:1.3}
+article p{margin-bottom:14px}
+article p:first-of-type::first-letter{font-family:var(--serif);font-size:3.4rem;float:left;line-height:0.9;padding:6px 8px 0 0;color:var(--red);font-weight:900}
+article a{color:var(--red);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+article a:hover{background:#fef2f2}
+article ul,article ol{margin:0 0 14px 20px}
+article li{margin-bottom:6px}
+article strong{color:var(--ink);font-weight:900}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-family:var(--sans);font-size:0.95rem;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+table caption{caption-side:top;text-align:left;font-family:var(--serif);font-weight:900;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--red);margin-bottom:6px;padding-bottom:4px}
+th{font-family:var(--serif);text-align:left;padding:10px 12px;border-bottom:1px solid var(--ink);background:#f3f3ee;font-weight:900;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em}
+td{padding:10px 12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.cta-inline{display:inline-block;background:var(--red);color:#fff!important;padding:14px 28px;font-family:var(--serif);font-weight:900;text-decoration:none!important;font-size:1.05rem;letter-spacing:0.02em;margin:8px 0;transition:background 0.2s}
+.cta-inline:hover{background:var(--red2);background-image:none!important}
+.cta-banner{display:block;background:var(--ink);color:#fff!important;padding:24px 28px;margin:32px 0;text-decoration:none!important;border:2px solid var(--ink);position:relative}
+.cta-banner:hover{background:var(--red);border-color:var(--red);background-image:none!important}
+.cta-banner h3{font-family:var(--serif);font-size:1.4rem;color:#fff;margin-bottom:6px}
+.cta-banner p{color:#e5e5e5;font-size:0.95rem;margin:0}
+.cta-banner span{position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:1.5rem;font-family:var(--serif)}
+.crumbs{font-size:0.82rem;color:var(--mute);margin:8px 0 0;text-transform:uppercase;letter-spacing:0.08em;font-family:var(--sans)}
+.crumbs a{color:var(--mute);text-decoration:none;border-bottom:1px dotted var(--mute)}
+.crumbs a:hover{color:var(--red);border-color:var(--red)}
+.crumbs span{margin:0 8px;color:var(--line-soft)}
+.box{background:var(--bg);border:1px solid var(--line);padding:20px 24px;margin:20px 0}
+.box-red{background:#fef2f2;border-left:4px solid var(--red);padding:14px 18px;margin:16px 0;font-size:0.93rem}
+.box-gold{background:#fefce8;border-left:4px solid var(--gold);padding:14px 18px;margin:16px 0;font-size:0.93rem}
+.section-kicker{display:block;font-family:var(--serif);font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:6px;font-weight:900}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;margin:18px 0;border-top:1px solid var(--line)}
+.grid-3 a{display:block;padding:16px 18px;text-decoration:none!important;color:var(--ink);border-bottom:1px solid var(--line);border-right:1px solid var(--line-soft);background:var(--bg);transition:background 0.2s}
+.grid-3 a:hover{background:#fef2f2;background-image:none!important}
+.grid-3 a:nth-child(3n){border-right:none}
+.grid-3 h3{font-family:var(--serif);font-size:1.05rem;margin-bottom:4px;color:var(--ink)}
+.grid-3 .meta{font-size:0.85rem;color:var(--mute)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0;margin:18px 0;border-top:1px solid var(--line)}
+.grid-2 a{display:block;padding:18px 20px;text-decoration:none!important;color:var(--ink);border-bottom:1px solid var(--line);border-right:1px solid var(--line-soft);background:var(--bg);transition:background 0.2s}
+.grid-2 a:hover{background:#fef2f2;background-image:none!important}
+.grid-2 a:nth-child(2n){border-right:none}
+.grid-2 h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:6px;color:var(--ink);line-height:1.3}
+.grid-2 .meta{font-size:0.82rem;color:var(--mute);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.grid-2 p{font-size:0.93rem;color:#444;margin:0}
+.faq{margin:24px 0;border-top:1px solid var(--line);padding-top:8px}
+.faq details{border-bottom:1px solid var(--line-soft);padding:14px 0}
+.faq summary{cursor:pointer;font-family:var(--serif);font-weight:900;font-size:1.08rem;padding:4px 24px 4px 0;list-style:none;position:relative;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:4px;color:var(--red);font-weight:900;font-size:1.4rem;font-family:var(--serif);line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--red)}
+.faq details p{margin:10px 0 4px;color:#333;font-size:0.97rem}
+.aside{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:24px 0}
+.aside > div{padding:16px 20px;border-right:1px solid var(--line-soft)}
+.aside > div:last-child{border-right:none}
+.aside h4{font-family:var(--serif);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:8px;font-weight:900}
+.aside a{display:block;padding:3px 0;color:var(--ink);text-decoration:none;font-size:0.93rem;border-bottom:1px dotted var(--line-soft)}
+.aside a:last-child{border-bottom:none}
+.aside a:hover{color:var(--red);text-decoration:underline}
+.searchbox{display:flex;gap:8px;margin:16px 0;align-items:center}
+.searchbox input{flex:1;padding:10px 14px;border:1px solid var(--line);font-family:var(--sans);font-size:0.95rem;border-radius:0}
+.searchbox button{background:var(--ink);color:#fff;border:none;padding:10px 18px;font-family:var(--serif);font-weight:900;cursor:pointer}
+.searchbox button:hover{background:var(--red)}
+.author-card{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:18px;background:var(--bg);border:1px solid var(--line-soft);margin:16px 0}
+.author-avatar{width:80px;height:80px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:900}
+.author-card h3{margin-bottom:4px}
+.author-card .role{font-size:0.85rem;color:var(--red);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.author-card p{font-size:0.9rem;color:#333;margin:0}
+footer{background:var(--ink);color:#d4d4d4;margin-top:48px;padding:32px 20px}
+footer .footer-inner{max-width:1200px;margin:0 auto}
+footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:24px}
+footer h4{font-family:var(--serif);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.15em;color:#fff;margin-bottom:10px;font-weight:900}
+footer a{color:#a3a3a3;text-decoration:none;display:block;padding:3px 0;font-size:0.88rem}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{border-top:1px solid #404040;padding-top:18px;font-size:0.82rem;line-height:1.7;color:#9ca3af}
+footer .legal p{margin-bottom:6px}
+footer .legal a{display:inline;color:#fff;text-decoration:underline}
+article h2 a{color:inherit;text-decoration:none}
+article h2 a:hover{color:var(--red)}
+@media(max-width:960px){
+ .lede{grid-template-columns:1fr;gap:24px}
+ .lede-side{padding-left:0;border-left:none;border-top:1px solid var(--line);padding-top:20px}
+ .lede-main h1{font-size:2.2rem}
+ .grid-3 a:nth-child(3n){border-right:1px solid var(--line-soft)}
+ .grid-3 a:nth-child(2n){border-right:none}
+ .grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+ body{font-size:16px}
+ .masthead{padding:10px 16px 6px}
+ .masthead-inner{flex-direction:column;align-items:flex-start;gap:2px}
+ .masthead .title{font-size:1.3rem}
+ .topnav{padding:6px 16px}
+ .topnav-inner{gap:10px;font-size:0.85rem}
+ .topnav a.cta{margin-left:0;padding:6px 12px;font-size:0.85rem}
+ main{padding:16px 16px}
+ .lede-main h1{font-size:1.7rem;line-height:1.2}
+ .lede-main .deck{font-size:1rem}
+ article h2{font-size:1.35rem;margin:28px 0 10px}
+ article h3{font-size:1.1rem}
+ article p:first-of-type::first-letter{font-size:2.6rem}
+ .grid-3,.grid-2{grid-template-columns:1fr}
+ .grid-3 a,.grid-2 a{border-right:none!important}
+ .aside{grid-template-columns:1fr}
+ .aside > div{border-right:none;border-bottom:1px solid var(--line-soft)}
+ .aside > div:last-child{border-bottom:none}
+ table{font-size:0.88rem}
+ th,td{padding:8px}
+ .cta-banner{padding:18px 20px}
+ .cta-banner h3{font-size:1.15rem}
+ .cta-banner span{display:none}
+ .author-card{grid-template-columns:60px 1fr}
+ .author-avatar{width:60px;height:60px;font-size:1.5rem}
+}`;
+
+// 把 slug 轉成 canonical 路徑（無 .html）
+function canonicalPath(slug) {
+  if (slug === 'index') return '/';
+  return `/${slug}`;
+}
+
+function htmlHead(opts) {
+  const { title, desc, slug, ogImage, jsonld } = opts;
+  const url = `${SITE.url}${canonicalPath(slug)}`;
+  const ogType = slug.startsWith('blog-') ? 'article' : 'website';
+  return `<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${title}｜${SITE.name}</title>
+<meta name="description" content="${desc}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="${url}">
+<link rel="alternate" hreflang="zh-TW" href="${url}">
+<link rel="alternate" hreflang="x-default" href="${url}">
+<meta property="og:title" content="${title}｜${SITE.name}">
+<meta property="og:description" content="${desc}">
+<meta property="og:type" content="${ogType}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${ogImage || SITE.ogImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${title}">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="${SITE.name}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${desc}">
+<meta name="twitter:image" content="${ogImage || SITE.ogImage}">
+<meta name="twitter:image:alt" content="${title}">
+<meta name="theme-color" content="#b91c1c">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="/style.css">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap"></noscript>
+<script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+</head>
+<body>`;
+}
+
+function masthead() {
+  // 注意：masthead 用 <p class="title"> 不是 <h1>，避免雙 h1
+  return `<header class="masthead" role="banner">
+<div class="masthead-inner">
+<p class="title"><a href="/" aria-label="${SITE.name} 首頁"><em>WC</em> 2026<span style="font-size:0.7em;font-weight:400;margin-left:8px;color:#666">完整指南</span></a></p>
+<span class="date">EST. 2025 ・ 賽前到決賽全紀錄</span>
+</div>
+</header>
+<nav class="topnav" aria-label="主導覽">
+<div class="topnav-inner">
+<a href="/">首頁</a>
+<a href="/schedule">賽程</a>
+<a href="/odds">賠率</a>
+<a href="/prediction">預測</a>
+<a href="/live">即時比分</a>
+<a href="/blog">分析文章</a>
+<a href="/news">最新消息</a>
+<a href="${SITE.cta}" class="cta" rel="nofollow sponsored" target="_blank">立即投注</a>
+</div>
+</nav>`;
+}
+
+function breadcrumb(items) {
+  return `<nav class="crumbs" aria-label="麵包屑">${items.map((it,i)=>{
+    if(i===items.length-1) return `<span style="color:#1a1a1a">${it[0]}</span>`;
+    return `<a href="${it[1]}">${it[0]}</a><span>›</span>`;
+  }).join('')}</nav>`;
+}
+
+function breadcrumbLD(items) {
+  return {
+    '@context':'https://schema.org',
+    '@type':'BreadcrumbList',
+    itemListElement: items.map((it,i)=>({
+      '@type':'ListItem',
+      position: i+1,
+      name: it[0],
+      ...(it[1] ? {item: SITE.url + it[1]} : {})
+    }))
+  };
+}
+
+function tldr(text) {
+  return `<div class="tldr" role="note"><strong>📌 30 秒讀懂：</strong>${text}</div>`;
+}
+
+function disclaimer() {
+  return `<div class="box-red" role="note">⚠️ <strong>免責聲明</strong>：本站提供 2026 世足賽資訊與賠率參考，僅供 18 歲以上成年人閱讀。投注有風險，請理性參與，未成年人請勿瀏覽。</div>`;
+}
+
+function ctaBanner(h, p) {
+  return `<a href="${SITE.cta}" class="cta-banner" rel="nofollow sponsored" target="_blank">
+<h3>${h || '🏆 立即前往合作平台'}</h3>
+<p>${p || '查看即時賠率、最新滾球盤口、世足賽投注全攻略'}</p>
+<span>→</span>
+</a>`;
+}
+
+function ctaInline(text) {
+  return `<a href="${SITE.cta}" class="cta-inline" rel="nofollow sponsored" target="_blank">${text || '前往合作平台 →'}</a>`;
+}
+
+function heroImg(svg, alt) {
+  return `<figure class="hero-img" role="img" aria-label="${alt}">${svg}<figcaption class="visually-hidden" style="position:absolute;left:-9999px">${alt}</figcaption></figure>`;
+}
+
+function authorByline(author, dateISO='2026-05-14') {
+  if (!author) return `<p class="byline">2026 美加墨世界盃 ・ <a href="/about">${SITE.name} 編輯部</a></p>`;
+  return `<p class="byline">✍️ <a href="/author-${author.slug}">${author.name}</a> ・ 📅 ${dateISO} ・ 2026 美加墨世界盃</p>`;
+}
+
+function footer() {
+  return `<footer role="contentinfo">
+<div class="footer-inner">
+<div class="footer-grid">
+<div><h4>核心頁面</h4>
+<a href="/schedule">完整賽程</a>
+<a href="/odds">冠軍賠率</a>
+<a href="/prediction">冠軍預測</a>
+<a href="/live">即時比分</a>
+<a href="/live-schedule">直播大廳</a>
+<a href="/news">最新消息</a>
+</div>
+<div><h4>分析文章</h4>
+<a href="/blog">全部文章</a>
+<a href="/blog-champion-prediction">冠軍預測</a>
+<a href="/blog-betting-guide">投注攻略</a>
+<a href="/blog-taiwan-time">台灣時間</a>
+<a href="/blog-where-to-watch">哪裡看</a>
+</div>
+<div><h4>熱門球隊</h4>
+<a href="/spain">🇪🇸 西班牙</a>
+<a href="/france">🇫🇷 法國</a>
+<a href="/england">🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格蘭</a>
+<a href="/argentina">🇦🇷 阿根廷</a>
+<a href="/brazil">🇧🇷 巴西</a>
+<a href="/japan">🇯🇵 日本</a>
+</div>
+<div><h4>合作平台 ・ 編輯部</h4>
+<a href="${SITE.motherSite}" rel="nofollow sponsored" target="_blank" style="color:#fbbf24;font-weight:700">🎰 ${SITE.motherSiteName}（ys89.fun）</a>
+<a href="/about">編輯部介紹</a>
+<a href="/author-editor-chief">主編</a>
+<a href="/author-analyst-tactics">戰術分析師</a>
+<a href="/author-analyst-betting">賠率分析師</a>
+<a href="/format">48 隊賽制</a>
+<a href="/venues">主辦城市</a>
+</div>
+</div>
+<div class="legal">
+<p><strong>📌 關於本站</strong>：本站為 2026 FIFA 世界盃資訊整理站，所有賽程、賠率、預測資訊僅供參考。FIFA、世界盃為其各自所有者之註冊商標。本站合作母站：<a href="${SITE.motherSite}" rel="nofollow sponsored" target="_blank">${SITE.motherSiteName}（ys89.fun）</a>。詳見 <a href="/about">編輯部介紹</a>。</p>
+<p><strong>⚠️ 警語</strong>：投注有風險，未滿 18 歲請勿瀏覽或參與。請理性投注、量力而為。</p>
+<p>© 2026 ${SITE.url.replace('https://','')}・${SITE.name}・All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>`;
+}
+
+function faqLD(qa) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: qa.map(([q,a]) => ({
+      '@type':'Question', name:q,
+      acceptedAnswer:{'@type':'Answer', text:a.replace(/<[^>]+>/g,'')}
+    }))
+  };
+}
+
+function faqSection(qa) {
+  return `<section class="faq" aria-label="常見問題">
+<h2><span class="section-kicker">Q&amp;A</span>常見問題</h2>
+${qa.map(([q,a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('\n')}
+</section>`;
+}
+
+// Person schema for author
+function personLD(author) {
+  return {
+    '@context':'https://schema.org',
+    '@type':'Person',
+    '@id':`${SITE.url}/author-${author.slug}#person`,
+    name: author.name,
+    description: author.bio,
+    jobTitle: author.title,
+    knowsAbout: author.expertise,
+    url: `${SITE.url}/author-${author.slug}`,
+    worksFor:{'@type':'Organization','@id':`${SITE.url}/#org`,'name':SITE.name}
+  };
+}
+
+module.exports = { htmlHead, masthead, breadcrumb, breadcrumbLD, tldr, disclaimer, ctaBanner, ctaInline, footer, faqLD, faqSection, heroImg, authorByline, personLD, canonicalPath, SHARED_CSS };
