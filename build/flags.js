@@ -100,7 +100,7 @@ function blogHeroSvg(title, kicker) {
 <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Georgia,serif;font-size:54px;font-weight:900;color:#fff;line-height:1.15">${title}</div>
 </foreignObject>
 <line x1="60" y1="340" x2="1140" y2="340" stroke="#666" stroke-width="1"/>
-<text x="60" y="375" font-family="-apple-system,sans-serif" font-size="20" fill="#999">2026 FIFA 世界盃 ・ ys89.biz</text>
+<text x="60" y="375" font-family="-apple-system,sans-serif" font-size="20" fill="#999">2026 FIFA 世界盃 ・ ys89.info</text>
 </svg>`;
 }
 

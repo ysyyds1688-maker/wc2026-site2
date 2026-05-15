@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ys89.biz/sitemap.xml
+Sitemap: https://ys89.info/sitemap.xml

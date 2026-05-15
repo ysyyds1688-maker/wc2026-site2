@@ -2,10 +2,10 @@
 const SITE = {
   name: '2026世足賽完整指南',
   brand: 'WC2026 完整指南',
-  url: 'https://ys89.biz',
+  url: 'https://ys89.info',
   cta: 'https://lihi2.me/SGvyv',
   ctaText: '立即前往合作平台',
-  ogImage: 'https://ys89.biz/banner.jpg',
+  ogImage: 'https://ys89.info/banner.jpg',
   motherSite: 'https://ys89.fun',
   motherSiteName: '夜色娛樂城',
 };
