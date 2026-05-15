@@ -54,11 +54,56 @@
 </div>
 </nav><main>
 
-<div style="line-height:0;margin-bottom:4px">
-  <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored">
-    <img src="/banner-countdown.webp" alt="2026世界盃開打倒數・觀賽入口即將開放" style="width:100%;height:auto;display:block">
-  </a>
+<div class="hero-carousel" id="heroCarousel">
+  <div class="hc-track" id="hcTrack">
+    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored" class="hc-slide"><img src="/banner-countdown.webp" alt="2026世界盃開打倒數・觀賽入口即將開放" loading="eager"></a>
+    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored" class="hc-slide"><img src="/banner-schedule.webp" alt="2026世界盃賽程總覽" loading="lazy"></a>
+    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored" class="hc-slide"><img src="/banner-live-2.webp" alt="2026世足直播攻略" loading="lazy"></a>
+    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored" class="hc-slide"><img src="/banner-unlock.webp" alt="解鎖完整觀賽・104場不錯過" loading="lazy"></a>
+    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored" class="hc-slide"><img src="/banner-card-104.webp" alt="104場世界盃賽事一覽" loading="lazy"></a>
+  </div>
+  <button class="hc-btn hc-prev" onclick="hcMove(-1)" aria-label="上一張">&#10094;</button>
+  <button class="hc-btn hc-next" onclick="hcMove(1)" aria-label="下一張">&#10095;</button>
+  <div class="hc-dots" id="hcDots"></div>
 </div>
+<style>
+.hero-carousel{position:relative;overflow:hidden;line-height:0;margin-bottom:4px;background:#0a1a30}
+.hc-track{display:flex;transition:transform .4s ease;will-change:transform}
+.hc-slide{flex:0 0 100%;display:block}
+.hc-slide img{width:100%;height:auto;display:block}
+.hc-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#fff;border:none;padding:10px 14px;font-size:20px;cursor:pointer;z-index:10;border-radius:4px;line-height:1}
+.hc-prev{left:6px}.hc-next{right:6px}
+.hc-btn:hover{background:rgba(0,0,0,.7)}
+.hc-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
+.hc-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;border:none;padding:0}
+.hc-dot.active{background:#e63946}
+</style>
+<script>
+(function(){
+  var cur=0,slides,total,dots;
+  function init(){
+    slides=document.querySelectorAll('#hcTrack .hc-slide');
+    total=slides.length;
+    var dc=document.getElementById('hcDots');
+    for(var i=0;i<total;i++){
+      var d=document.createElement('button');
+      d.className='hc-dot'+(i===0?' active':'');
+      d.setAttribute('aria-label','第'+(i+1)+'張');
+      (function(idx){d.onclick=function(){goTo(idx)}})(i);
+      dc.appendChild(d);
+    }
+    dots=dc.querySelectorAll('.hc-dot');
+    setInterval(function(){goTo((cur+1)%total)},4000);
+  }
+  function goTo(n){
+    cur=n;
+    document.getElementById('hcTrack').style.transform='translateX(-'+cur*100+'%)';
+    dots.forEach(function(d,i){d.classList.toggle('active',i===cur)});
+  }
+  window.hcMove=function(dir){goTo((cur+dir+total)%total)};
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init)}else{init()}
+})();
+</script>
 
 <div class="tldr" role="note"><strong>📌 30 秒讀懂：</strong>2026 世足賽 6/11 開幕、7/19 決賽，由美國、加拿大、墨西哥聯辦，48 隊 104 場。西班牙 4.5 倍奪冠最熱門，法國、英格蘭緊追。</div>
 
