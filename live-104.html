@@ -146,12 +146,25 @@
     </aside>
   </section>
 
-  <!-- Banner -->
-  <div style="margin:16px 0">
-    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored">
+  <!-- Banner 輪播 -->
+  <div style="margin:16px 0;line-height:0" id="infoSlider">
+    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored" class="info-slide" style="display:block">
       <img src="/banner-unlock.png" alt="註冊解鎖觀賽專區・2026世界盃104場入口整理" style="width:100%;height:auto;display:block;">
     </a>
+    <a href="https://lihi2.me/SGvyv" target="_blank" rel="nofollow sponsored" class="info-slide" style="display:none">
+      <img src="/banner-live-2.png" alt="2026世界盃104場觀賽入口・開打前先存" style="width:100%;height:auto;display:block;">
+    </a>
   </div>
+  <script>
+  (function(){
+    var slides=document.querySelectorAll('#infoSlider .info-slide'),i=0;
+    setInterval(function(){
+      slides[i].style.display='none';
+      i=(i+1)%slides.length;
+      slides[i].style.display='block';
+    },4000);
+  })();
+  </script>
 
   <div class="box-red" role="note">⚠️ <strong>免責聲明</strong>：本站提供 2026 世足賽直播資訊參考，僅供 18 歲以上成年人閱讀。</div>
 
