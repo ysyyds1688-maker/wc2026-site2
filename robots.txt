@@ -38,4 +38,4 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: //ys89.info/sitemap.xml
+Sitemap: https://ys89.info/sitemap.xml
