@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="zh-TW" href="https://ys89.info/match-recap-template">
+<link rel="alternate" hreflang="x-default" href="https://ys89.info/match-recap-template">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TEAM_A}} vs {{TEAM_B}} 比賽結果複盤｜{{SCORE_A}}:{{SCORE_B}} 投注結果分析｜ys89.info</title>
+<meta name="description" content="{{TEAM_A}} {{SCORE_A}}:{{SCORE_B}} {{TEAM_B}} 完整賽後複盤：比賽亮點、進球時間、投注結果分析，以及下一場相關賽程與賠率預告。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://ys89.info/match-recap-template">
+<meta property="og:title" content="{{TEAM_A}} {{SCORE_A}}:{{SCORE_B}} {{TEAM_B}} 比賽結果複盤｜投注結果分析">
+<meta property="og:description" content="{{TEAM_A}} vs {{TEAM_B}} 賽後完整複盤：比賽亮點、投注結果分析、下場賭注攻略。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ys89.info/match-recap-template">
+<meta property="og:image" content="https://ys89.info/og-image.jpg">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="2026世界盃直播資訊站">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TEAM_A}} {{SCORE_A}}:{{SCORE_B}} {{TEAM_B}} 複盤｜投注結果">
+<meta name="twitter:description" content="{{TEAM_A}} vs {{TEAM_B}} 賽後複盤與投注結果分析。">
+<meta name="twitter:image" content="https://ys89.info/og-image.jpg">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{TEAM_A}} {{SCORE_A}}:{{SCORE_B}} {{TEAM_B}} 比賽結果複盤｜投注結果分析",
+  "description": "{{TEAM_A}} vs {{TEAM_B}} 賽後完整複盤：比賽亮點、投注結果分析、下場賭注攻略。",
+  "datePublished": "2026-05-16",
+  "dateModified": "2026-05-16",
+  "author": {"@type": "Person", "name": "主編", "url": "https://ys89.info"},
+  "publisher": {"@type": "Organization", "name": "ys89.info", "url": "https://ys89.info", "logo": {"@type": "ImageObject", "url": "https://ys89.info/logo.png"}},
+  "mainEntityOfPage": "https://ys89.info/match-recap-template",
+  "image": {"@type": "ImageObject", "url": "https://ys89.info/og-image.jpg", "width": 1200, "height": 630},
+  "inLanguage": "zh-TW"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "{{TEAM_A}} vs {{TEAM_B}} 比賽結果是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "最終比分為 {{TEAM_A}} {{SCORE_A}}:{{SCORE_B}} {{TEAM_B}}。{{RESULT_SUMMARY}}"}},
+    {"@type": "Question", "name": "{{TEAM_A}} 下一場是什麼時候？", "acceptedAnswer": {"@type": "Answer", "text": "{{TEAM_A}} 下一場比賽時間為 {{TEAM_A_NEXT_MATCH}}，對手為 {{TEAM_A_NEXT_OPPONENT}}。台灣時間 {{TEAM_A_NEXT_TIME}}。"}},
+    {"@type": "Question", "name": "如何投注下一場比賽？", "acceptedAnswer": {"@type": "Answer", "text": "點擊頁面上的「立即投注」按鈕，完成開戶後即可提前投注下一場比賽。建議在開賽前至少1小時完成投注以享有最佳賠率。"}}
+  ]
+}</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a1628;--bg2:#0f1f3d;--card:#0d1e38;--card2:#112244;
+  --blue:#3b82f6;--blue2:#60a5fa;--blue3:#1d4ed8;
+  --gold:#f59e0b;--gold2:#fbbf24;
+  --green:#10b981;--green2:#34d399;
+  --red:#ef4444;--red2:#fca5a5;
+  --text:#e2e8f0;--text2:#cbd5e1;--muted:#64748b;
+  --border:#1e3a5f;
+  --shadow:0 4px 24px rgba(0,0,0,0.4);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC','Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden}
+a{color:var(--blue2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.site-header{background:var(--bg2);border-bottom:2px solid var(--blue3);padding:14px 0}
+.site-header-inner{max-width:960px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.site-logo{font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:-0.5px}
+.site-logo em{color:var(--blue);font-style:normal}
+.site-nav{display:flex;gap:4px;flex-wrap:wrap}
+.site-nav a{color:var(--text2);font-size:0.85rem;padding:5px 10px;border-radius:6px;transition:background 0.2s}
+.site-nav a:hover{background:var(--card2);text-decoration:none;color:#fff}
+.site-nav .nav-cta{background:var(--blue3);color:#fff;font-weight:700}
+.site-nav .nav-cta:hover{background:var(--blue)}
+
+.article-wrap{max-width:900px;margin:0 auto;padding:40px 20px 80px}
+.breadcrumb{font-size:0.82rem;color:var(--muted);margin-bottom:20px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb span{margin:0 6px}
+
+.article-hero{background:linear-gradient(135deg,#0d1e38 0%,#1a1000 100%);border:1px solid var(--gold);border-radius:16px;padding:40px 36px;margin-bottom:36px;position:relative;overflow:hidden}
+.article-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--green))}
+.article-tag{display:inline-block;background:#1a1000;color:var(--gold2);font-size:0.75rem;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:1px;margin-bottom:16px}
+.article-hero h1{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#fff;line-height:1.3;margin-bottom:16px}
+.article-hero .deck{font-size:1rem;color:var(--text2);max-width:680px;line-height:1.7}
+.article-meta{margin-top:20px;font-size:0.82rem;color:var(--muted);display:flex;gap:20px;flex-wrap:wrap}
+
+.score-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;margin-bottom:28px;text-align:center}
+.score-card h2{font-size:0.9rem;font-weight:700;color:var(--gold2);margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
+.score-display{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:20px;flex-wrap:wrap}
+.score-team{text-align:center;flex:1;min-width:100px}
+.score-team-name{font-size:1.2rem;font-weight:900;color:#fff}
+.score-team-sub{font-size:0.8rem;color:var(--muted);margin-top:4px}
+.score-num{font-size:4rem;font-weight:900;color:var(--gold2);line-height:1}
+.score-details{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:0.85rem;color:var(--text2);margin-top:12px}
+
+.toc-box{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;padding:24px 28px;margin-bottom:36px}
+.toc-box h2{font-size:0.9rem;font-weight:700;color:var(--gold2);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
+.toc-box ol{padding-left:20px}
+.toc-box li{margin-bottom:6px;font-size:0.9rem}
+.toc-box a{color:var(--text2)}
+.toc-box a:hover{color:var(--gold2)}
+
+.disclaimer{background:#1a0a00;border:1px solid #92400e;border-radius:10px;padding:14px 18px;margin-bottom:32px;font-size:0.83rem;color:#fcd34d}
+
+.article-body h2{font-size:1.45rem;font-weight:900;color:#fff;margin:48px 0 18px;padding-top:8px;border-top:1px solid var(--border);line-height:1.35}
+.article-body h3{font-size:1.1rem;font-weight:700;color:var(--gold2);margin:28px 0 12px;display:flex;align-items:center;gap:8px}
+.article-body h3::before{content:'';display:inline-block;width:4px;height:18px;background:var(--gold);border-radius:2px}
+.article-body p{margin-bottom:16px;color:var(--text2);line-height:1.85}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:16px}
+.article-body li{margin-bottom:8px;color:var(--text2);line-height:1.75}
+.article-body strong{color:#fff}
+
+.timeline{margin:20px 0}
+.timeline-item{display:flex;gap:16px;margin-bottom:14px;align-items:flex-start}
+.timeline-min{background:var(--card2);color:var(--gold2);font-size:0.85rem;font-weight:700;padding:4px 10px;border-radius:6px;white-space:nowrap;min-width:50px;text-align:center}
+.timeline-event{font-size:0.9rem;color:var(--text2);line-height:1.6;padding-top:2px}
+.timeline-event strong{color:#fff}
+
+.result-table-wrap{overflow-x:auto;margin:20px 0}
+.result-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.result-table th{background:var(--card2);color:var(--gold2);padding:11px 14px;text-align:left;font-weight:700;border-bottom:2px solid #92400e}
+.result-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top}
+.result-win{color:var(--green2);font-weight:700}
+.result-loss{color:var(--red2);font-weight:700}
+.result-push{color:var(--gold2);font-weight:700}
+
+.next-match-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin:24px 0}
+.next-match-card h4{font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:14px}
+.next-match-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.next-match-item{background:var(--card2);border-radius:8px;padding:10px 14px}
+.next-match-label{font-size:0.72rem;color:var(--muted);margin-bottom:4px}
+.next-match-value{font-size:0.88rem;font-weight:700;color:#fff}
+
+.cta-box{background:linear-gradient(135deg,#1a1000 0%,#92400e 100%);border:1px solid var(--gold);border-radius:16px;padding:36px 32px;text-align:center;margin:40px 0}
+.cta-box h3{font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:10px}
+.cta-box p{color:#fde68a;margin-bottom:24px;font-size:0.95rem}
+.cta-btn{display:inline-block;background:var(--gold);color:#000;font-size:1.05rem;font-weight:900;padding:14px 40px;border-radius:50px;transition:transform 0.2s,box-shadow 0.2s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(245,158,11,0.4);text-decoration:none;color:#000;background:var(--gold2)}
+.cta-sub{font-size:0.78rem;color:#fcd34d;margin-top:12px}
+
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq-q{background:var(--card);padding:16px 20px;font-weight:700;color:#fff;font-size:0.95rem}
+.faq-a{background:var(--bg);padding:14px 20px;color:var(--text2);font-size:0.9rem;line-height:1.75}
+
+.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 20px;text-align:center;font-size:0.8rem;color:var(--muted);margin-top:60px}
+
+@media(max-width:640px){
+  .article-hero{padding:28px 20px}
+  .article-body h2{font-size:1.2rem}
+  .score-num{font-size:3rem}
+  .cta-box{padding:28px 18px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-logo"><em>YS89</em>.games</div>
+    <nav class="site-nav" aria-label="主導覽">
+      <a href="/">首頁</a>
+      <a href="/schedule.html">賽程</a>
+      <a href="/odds.html">賠率</a>
+      <a href="/prediction.html">預測</a>
+      <a href="/blog.html">分析</a>
+      <a href="https://lihi2.me/SGvyv" class="nav-cta" rel="nofollow sponsored" target="_blank">立即投注</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <nav class="breadcrumb" aria-label="麵包屑">
+    <a href="/">首頁</a><span>›</span><a href="/blog.html">分析文章</a><span>›</span><span>賽後複盤</span>
+  </nav>
+
+  <div class="article-hero">
+    <div class="article-tag">賽後複盤</div>
+    <h1>{{TEAM_A}} {{SCORE_A}}:{{SCORE_B}} {{TEAM_B}}｜賽後複盤與投注結果分析</h1>
+    <p class="deck">2026世界盃 {{TEAM_A}} 對 {{TEAM_B}} 完整賽後複盤：比賽亮點、進球時間軸、各盤口投注結果分析，以及下一場賽程賠率預告。</p>
+    <div class="article-meta">
+      <span>主編・賠率分析師</span>
+      <span>2026-05-16</span>
+      <span>約6分鐘閱讀</span>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    免責聲明：本文提供賽事資訊與投注複盤，僅供18歲以上成年人閱讀。投注有風險，請量力而為，未成年人請勿瀏覽。
+  </div>
+
+  <!-- 比賽結果卡 -->
+  <div class="score-card">
+    <h2>最終比分</h2>
+    <div class="score-display">
+      <div class="score-team">
+        <div class="score-team-name">{{TEAM_A}}</div>
+        <div class="score-team-sub">{{TEAM_A_STATUS}}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="score-num">{{SCORE_A}}</span>
+        <span style="font-size:1.5rem;color:var(--muted)">:</span>
+        <span class="score-num">{{SCORE_B}}</span>
+      </div>
+      <div class="score-team">
+        <div class="score-team-name">{{TEAM_B}}</div>
+        <div class="score-team-sub">{{TEAM_B_STATUS}}</div>
+      </div>
+    </div>
+    <div class="score-details">
+      <span>上半場：{{HALFTIME_SCORE}}</span>
+      <span>觀眾人數：{{ATTENDANCE}}</span>
+      <span>場館：{{VENUE}}</span>
+    </div>
+  </div>
+
+  <div class="toc-box">
+    <h2>本文目錄</h2>
+    <ol>
+      <li><a href="#highlights">比賽亮點</a></li>
+      <li><a href="#timeline">進球時間軸</a></li>
+      <li><a href="#stats">關鍵數據</a></li>
+      <li><a href="#bet-result">投注結果分析</a></li>
+      <li><a href="#next-match">下一場賽程與賠率</a></li>
+      <li><a href="#faq">常見問題</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="highlights">比賽亮點</h2>
+
+    <p>{{HIGHLIGHTS}}</p>
+
+    <p>{{MATCH_ANALYSIS}}</p>
+
+    <h3>MVP 表現</h3>
+    <p>{{MVP_ANALYSIS}}</p>
+
+    <h2 id="timeline">進球時間軸</h2>
+
+    <div class="timeline">
+      <!-- 複製此區塊新增進球記錄 -->
+      <div class="timeline-item">
+        <div class="timeline-min">{{GOAL_1_MIN}}'</div>
+        <div class="timeline-event"><strong>{{GOAL_1_SCORER}}</strong>（{{GOAL_1_TEAM}}）｜{{GOAL_1_TYPE}}</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-min">{{GOAL_2_MIN}}'</div>
+        <div class="timeline-event"><strong>{{GOAL_2_SCORER}}</strong>（{{GOAL_2_TEAM}}）｜{{GOAL_2_TYPE}}</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-min">{{GOAL_3_MIN}}'</div>
+        <div class="timeline-event"><strong>{{GOAL_3_SCORER}}</strong>（{{GOAL_3_TEAM}}）｜{{GOAL_3_TYPE}}</div>
+      </div>
+    </div>
+
+    <h3>紅黃牌記錄</h3>
+    <p>{{CARDS_SUMMARY}}</p>
+
+    <h2 id="stats">關鍵數據</h2>
+
+    <div class="result-table-wrap">
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>數據項目</th>
+            <th>{{TEAM_A}}</th>
+            <th>{{TEAM_B}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>控球率</td>
+            <td>{{STAT_POSSESSION_A}}%</td>
+            <td>{{STAT_POSSESSION_B}}%</td>
+          </tr>
+          <tr>
+            <td>射門次數</td>
+            <td>{{STAT_SHOTS_A}}</td>
+            <td>{{STAT_SHOTS_B}}</td>
+          </tr>
+          <tr>
+            <td>射正次數</td>
+            <td>{{STAT_SHOTS_ON_A}}</td>
+            <td>{{STAT_SHOTS_ON_B}}</td>
+          </tr>
+          <tr>
+            <td>角球次數</td>
+            <td>{{STAT_CORNERS_A}}</td>
+            <td>{{STAT_CORNERS_B}}</td>
+          </tr>
+          <tr>
+            <td>越位次數</td>
+            <td>{{STAT_OFFSIDES_A}}</td>
+            <td>{{STAT_OFFSIDES_B}}</td>
+          </tr>
+          <tr>
+            <td>犯規次數</td>
+            <td>{{STAT_FOULS_A}}</td>
+            <td>{{STAT_FOULS_B}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="bet-result">投注結果分析</h2>
+
+    <p>賽前我們提供了以下投注建議，以下是實際結果對照：</p>
+
+    <div class="result-table-wrap">
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>盤口</th>
+            <th>賽前推薦</th>
+            <th>實際結果</th>
+            <th>勝負</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>獨贏</td>
+            <td>{{BET_WIN_RECOMMENDATION}}</td>
+            <td>{{BET_WIN_RESULT}}</td>
+            <td class="{{BET_WIN_CLASS}}">{{BET_WIN_VERDICT}}</td>
+          </tr>
+          <tr>
+            <td>讓分盤</td>
+            <td>{{BET_HANDICAP_RECOMMENDATION}}</td>
+            <td>{{BET_HANDICAP_RESULT}}</td>
+            <td class="{{BET_HANDICAP_CLASS}}">{{BET_HANDICAP_VERDICT}}</td>
+          </tr>
+          <tr>
+            <td>大小球</td>
+            <td>{{BET_TOTAL_RECOMMENDATION}}</td>
+            <td>{{BET_TOTAL_RESULT}}</td>
+            <td class="{{BET_TOTAL_CLASS}}">{{BET_TOTAL_VERDICT}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>{{BET_RESULT_ANALYSIS}}</p>
+
+    <h2 id="next-match">下一場賽程與賠率</h2>
+
+    <div class="next-match-card">
+      <h4>{{TEAM_A}} 下一場</h4>
+      <div class="next-match-info">
+        <div class="next-match-item">
+          <div class="next-match-label">對手</div>
+          <div class="next-match-value">{{TEAM_A_NEXT_OPPONENT}}</div>
+        </div>
+        <div class="next-match-item">
+          <div class="next-match-label">台灣時間</div>
+          <div class="next-match-value">{{TEAM_A_NEXT_TIME}}</div>
+        </div>
+        <div class="next-match-item">
+          <div class="next-match-label">{{TEAM_A}} 賠率</div>
+          <div class="next-match-value">{{TEAM_A_NEXT_ODDS}}</div>
+        </div>
+        <div class="next-match-item">
+          <div class="next-match-label">{{TEAM_A_NEXT_OPPONENT}} 賠率</div>
+          <div class="next-match-value">{{TEAM_A_NEXT_OPP_ODDS}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-match-card">
+      <h4>{{TEAM_B}} 下一場</h4>
+      <div class="next-match-info">
+        <div class="next-match-item">
+          <div class="next-match-label">對手</div>
+          <div class="next-match-value">{{TEAM_B_NEXT_OPPONENT}}</div>
+        </div>
+        <div class="next-match-item">
+          <div class="next-match-label">台灣時間</div>
+          <div class="next-match-value">{{TEAM_B_NEXT_TIME}}</div>
+        </div>
+        <div class="next-match-item">
+          <div class="next-match-label">{{TEAM_B}} 賠率</div>
+          <div class="next-match-value">{{TEAM_B_NEXT_ODDS}}</div>
+        </div>
+        <div class="next-match-item">
+          <div class="next-match-label">{{TEAM_B_NEXT_OPPONENT}} 賠率</div>
+          <div class="next-match-value">{{TEAM_B_NEXT_OPP_ODDS}}</div>
+        </div>
+      </div>
+    </div>
+
+    <p>更多賽程與賠率資訊請回到<a href="/">首頁</a>查閱，或前往 <a href="https://ys89.fun/world-cup-2026/" target="_blank">ys89.fun 世界盃專區</a>瀏覽完整資訊。</p>
+
+    <div class="cta-box">
+      <h3>提前投注下一場，享有最佳賠率</h3>
+      <p>開賽前越早投注，賠率越高。立即開戶，把握下場比賽投注優勢。</p>
+      <a href="https://lihi2.me/SGvyv" class="cta-btn" rel="nofollow sponsored" target="_blank">立即投注下一場</a>
+      <p class="cta-sub">18歲以上方可參與，投注請理性，量力而為</p>
+    </div>
+
+    <h2 id="faq">常見問題 FAQ</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">{{TEAM_A}} vs {{TEAM_B}} 比賽結果是什麼？</div>
+      <div class="faq-a">最終比分為 {{TEAM_A}} {{SCORE_A}}:{{SCORE_B}} {{TEAM_B}}。{{RESULT_SUMMARY}}</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">{{TEAM_A}} 下一場是什麼時候？</div>
+      <div class="faq-a">{{TEAM_A}} 下一場比賽時間為 {{TEAM_A_NEXT_TIME}}（台灣時間），對手為 {{TEAM_A_NEXT_OPPONENT}}。更多賽程資訊請至<a href="/">首頁</a>查閱。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">如何投注下一場比賽？</div>
+      <div class="faq-a">點擊頁面上的「立即投注」按鈕，完成開戶後即可提前投注下一場比賽。建議在開賽前至少1小時完成投注以享有最佳賠率。新會員可領取開戶體驗金，詳情請至<a href="/">首頁</a>了解。</div>
+    </div>
+
+  </div><!-- /article-body -->
+
+</div><!-- /article-wrap -->
+
+<footer class="site-footer">
+  <p>本站提供2026世界盃賽程、賠率與投注攻略資訊｜<a href="/">ys89.info</a></p>
+  <p style="margin-top:8px">18歲以上成年人限閱。投注有風險，請量力而為。</p>
+</footer>
+
+</body>
+</html>
