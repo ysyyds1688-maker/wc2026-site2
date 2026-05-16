@@ -1,3 +1,8 @@
 # Cloudflare Pages redirects
 /home / 301
 /index /index.html 301
+/blog-messi-vs-mbappe /messi-mbappe-2026-comparison 301
+/blog-broadcast-schedule /live-broadcast-complete-guide 301
+/blog-where-to-watch /where-watch-worldcup-taiwan 301
+/blog-format-explained /new-48team-format-guide 301
+/blog-theme-song /worldcup-2026-theme-music 301
